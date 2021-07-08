@@ -1,0 +1,8 @@
+name: Nick
+version: ${project.version}
+main: net.royalmind.minecraft.plugin.nick.Nick
+api-version: 1.17
+authors: [ ImSrPanda ]
+description: Minecraft nick plugin
+website: https://royalmind.net/
+depend: [NickAPI]
