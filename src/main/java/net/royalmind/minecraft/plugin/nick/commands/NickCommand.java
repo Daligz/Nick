@@ -38,6 +38,7 @@ public class NickCommand implements CommandExecutor {
             NickAPI.resetGameProfileName(player);
             NickAPI.resetSkin(player);
             NickAPI.resetUniqueId(player);
+            NickAPI.refreshPlayer(player);
             player.sendMessage(ChatColor.YELLOW + "Vuelves a ser " + player.getDisplayName());
             return true;
         } else if (arg.equalsIgnoreCase("uuid")) {
