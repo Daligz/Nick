@@ -11,6 +11,7 @@ public class NickCommand implements CommandExecutor {
 
     private static final String[] HELP_MESSAGES = {
             "/nick uui",
+            "/nick update",
             "/nick off",
             "/nick <Player>",
     };
@@ -34,7 +35,6 @@ public class NickCommand implements CommandExecutor {
         }
         final String arg = args[0];
         if (arg.equalsIgnoreCase("off")) {
-            NickAPI.resetNick(player);
             NickAPI.resetGameProfileName(player);
             NickAPI.resetSkin(player);
             NickAPI.resetUniqueId(player);
@@ -44,12 +44,13 @@ public class NickCommand implements CommandExecutor {
         } else if (arg.equalsIgnoreCase("uuid")) {
             player.sendMessage(ChatColor.RED + "Tu UUID es : " + player.getUniqueId());
             return true;
+        } else if (arg.equalsIgnoreCase("update")) {
+            NickAPI.refreshPlayer(player);
         }
         if (NickAPI.isNicked(player)) {
             player.sendMessage(ChatColor.RED + "Ya tienes un nick!");
             return true;
         }
-
         NickAPI.nick(player, arg);
         NickAPI.setSkin(player, arg);
         NickAPI.setUniqueId(player, arg);
