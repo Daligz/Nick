@@ -6,3 +6,6 @@ authors: [ ImSrPanda ]
 description: Minecraft nick plugin
 website: https://royalmind.net/
 depend: [NickAPI]
+commands:
+  nick:
+    usage: Nick a player
